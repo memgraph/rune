@@ -1,12 +1,7 @@
-# RUNE - Repository Understanding, Navigation and Exploration
 
-This document provides step-by-step instructions on how to run the rune frontend alone. Before running the app, you will need to install its dependencies and set up a `.env` file with a `REACT_APP_GITHUB_API_TOKEN` field. The token will be used for accessing the GitHub API.
+# magic-graph web app documentation
 
-## Development
-
-If you made changes to the code, do:
-1. ```docker build -t patrikkukic/bor:latest .```
-2. ```docker push patrikkukic/bor:latest```
+This document provides step-by-step instructions on how to run magic-graph frontend alone. Before running the app, you will need to install its dependencies and set up a `.env` file with a `REACT_APP_GITHUB_API_TOKEN` field. The token will be used for accessing the GitHub API.
 
 ## Installation
 
@@ -19,14 +14,22 @@ Before proceeding, make sure you have the following installed on your machine:
 
 ### Cloning the repository
 
-First, you need to clone the Git repository that contains the rune app. If you already have the codebase, you can skip this step.
+First, you need to clone the Git repository that contains the magic-graph app. If you already have the codebase, you can skip this step.
 
 ```bash
-git clone https://github.com/memgraph/rune.git
+git clone https://github.com/memgraph/magic-graph.git
 ```
 ```bash
-cd rune 
+cd frontend 
 ```
+
+### Installing dependencies
+
+Once you have the codebase on your local machine you can install the required dependencies using npm:
+
+```bash
+npm install
+``` 
 
 ### Generating the GitHub API Token
 
@@ -62,21 +65,11 @@ REACT_APP_NEWS_API_TOKEN=YOUR_GENERATED_NEWSAPI_TOKEN
 
 Replace `YOUR_GENERATED_GITHUB_TOKEN` and `YOUR_GENERATED_NEWSAPI_TOKEN` with the actual tokens you generated in previous steps.
 
-### Installing and running RUNE
+### Starting the development server
 
-If you want to run RUNE locally, do:
-
-1. ```npm install```
-
-
-2. ```npm start``` 
-    
-    This command will compile the TypeScript code and launch the app in your default web browser. If it doesn't open automatically, you can visit `http://localhost:3000` in your browser to access the running app.
-
-
-If you want to run RUNE via Docker, do:
+With the dependencies installed and the `.env` file configured, you are ready to start the development server and run the app:
 
 ```bash
-docker compose up
-```
-
+npm start
+``` 
+This command will compile the TypeScript code and launch the app in your default web browser. If it doesn't open automatically, you can visit `http://localhost:3000` in your browser to access the running app.
