@@ -2,6 +2,11 @@
 
 This document provides step-by-step instructions on how to run the rune frontend alone. Before running the app, you will need to install its dependencies and set up a `.env` file with a `REACT_APP_GITHUB_API_TOKEN` field. The token will be used for accessing the GitHub API.
 
+## Disclaimer
+
+> **Warning**
+> It is recommended that you have access to GPT-4 via the OpenAI API. GPT-3.5 will probably fail to make correct knowledge graphs from your data.
+
 ## Development
 
 If you made changes to the code, do:
