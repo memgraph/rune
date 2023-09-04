@@ -1,6 +1,13 @@
+[![react](https://img.shields.io/badge/React-61DBFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
+[![typescript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![styledcomponents](https://img.shields.io/badge/styled_components-DB7093?style=for-the-badge&logo=styledcomponents&logoColor=white)](https://styled-components.com/)
+
+[![github](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/)
+[![docker](https://img.shields.io/badge/docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
+
 # RUNE - Repository Understanding, Navigation and Exploration
 
-This document provides step-by-step instructions on how to run the rune frontend alone. Before running the app, you will need to install its dependencies and set up a `.env` file with a `REACT_APP_GITHUB_API_TOKEN` field. The token will be used for accessing the GitHub API.
+This document provides step-by-step instructions on how to run the rune frontend alone. Before running the app, you will need to install its dependencies and set up a `.env` file with a `REACT_APP_GITHUB_API_TOKEN` and an optional `REACT_APP_NEWS_API_TOKEN` field. The tokens will be used for accessing the GitHub API and the News API.
 
 ## Disclaimer
 
