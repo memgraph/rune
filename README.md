@@ -7,7 +7,7 @@
 
 # RUNE - Repository Understanding, Navigation and Exploration
 
-This document provides step-by-step instructions on how to run the rune frontend alone. Before running the app, you will need to install its dependencies and set up a `.env` file with a `REACT_APP_GITHUB_API_TOKEN` and an optional `REACT_APP_NEWS_API_TOKEN` field. The tokens will be used for accessing the GitHub API and the News API.
+This document provides step-by-step instructions on how to run the RUNE web app. Before running the app, you will need to install its dependencies and set up a `.env` file with a `REACT_APP_GITHUB_API_TOKEN` and an optional `REACT_APP_NEWS_API_TOKEN` field. The tokens will be used for accessing the GitHub API and the News API.
 
 ## Disclaimer
 
@@ -17,29 +17,28 @@ This document provides step-by-step instructions on how to run the rune frontend
 > the `init_repo`, `update_file` and `add_file` endpoints are still untested. We initialized knowledge graphs manually, through ChatGPT.
 > **Here be dragons.**
 
-## Development
+You can download and run RUNE via Docker to automatically install Memgraph, frontend and the backend components, or install it manually if you prefer a more customized setup.
 
-If you made changes to the code, do:
-1. ```docker build -t patrikkukic/bor:latest .```
-2. ```docker push patrikkukic/bor:latest```
-
-## Installation
+## Manual installation
 
 ### Prerequisites
 
 Before proceeding, make sure you have the following installed on your machine:
 
-1.  Node.js (version 14 or above)
-2.  npm (Node Package Manager)
+1.  [Node.js](https://nodejs.org/en/download/current) (version 14 or above)
+2.  [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) (Node Package Manager)
 
 ### Cloning the repository
 
-First, you need to clone the Git repository that contains the rune app. If you already have the codebase, you can skip this step.
+First, you need to clone the Git repository that contains the RUNE app. If you already have the codebase, you can skip this step.
 
-```bash
+```
 git clone https://github.com/memgraph/rune.git
 ```
-```bash
+
+Navigate into the RUNE root folder:
+
+```
 cd rune 
 ```
 
@@ -66,11 +65,11 @@ To access NewsAPI and retrieve theme-related articles for your repository, you'l
 
 ### Creating the .env file
 
-In the root directory of your project (frontend folder), create a new file called `.env` (if it doesn't already exist). This file will store your environment variables, including the GitHub API token.
+In the root directory of your project, create a new file called `.env` (if it doesn't already exist). This file will store your environment variables, including the GitHub API token.
 
-Open the `.env` file in a text editor and add the following line:
+Open the `.env` file in a text editor and add the following lines:
 
-```bash
+```
 REACT_APP_GITHUB_API_TOKEN=YOUR_GENERATED_GITHUB_TOKEN
 REACT_APP_NEWS_API_TOKEN=YOUR_GENERATED_NEWSAPI_TOKEN
 ```
@@ -79,19 +78,45 @@ Replace `YOUR_GENERATED_GITHUB_TOKEN` and `YOUR_GENERATED_NEWSAPI_TOKEN` with th
 
 ### Installing and running RUNE
 
-If you want to run RUNE locally, do:
+1. Install all required dependencies: 
 
-1. ```npm install```
+    ```npm install```
 
 
-2. ```npm start``` 
+2. Run the app:
+
+    ```npm start``` 
     
     This command will compile the TypeScript code and launch the app in your default web browser. If it doesn't open automatically, you can visit `http://localhost:3000` in your browser to access the running app.
 
+3. Now that you have frontend up and running, you need to start the backend by following the installation steps for [BOR](https://github.com/memgraph/bor).
 
-If you want to run RUNE via Docker, do:
 
-```bash
+## Docker installation
+
+### Cloning the repository
+
+First, you need to clone the Git repository that contains the RUNE app. If you already have the codebase, you can skip this step.
+
+```
+git clone https://github.com/memgraph/rune.git
+```
+
+Navigate into the RUNE root folder:
+
+```
+cd rune 
+```
+
+### Starting the app
+
+To start RUNE make sure you have a running [Docker](https://www.docker.com/) instance and [Docker compose](https://docs.docker.com/compose/install/) installed.
+
+```
 docker compose up
 ```
+
+### Using the app
+
+To access the running app after the installation process, you can visit `http://localhost:3000` in your browser.
 
