@@ -7,7 +7,43 @@
 
 # RUNE - Repository Understanding, Navigation and Exploration
 
-This document provides step-by-step instructions on how to run the RUNE web app. Before running the app, you will need to install its dependencies and set up a `.env` file with a `REACT_APP_GITHUB_API_TOKEN` and an optional `REACT_APP_NEWS_API_TOKEN` field. The tokens will be used for accessing the GitHub API and the News API.
+RUNE is a web application that integrates Large Language Model (LLM) capabilities with graph visualization to enhance developer productivity and code comprehension while using GitHub.
+
+## Table of contents
+1. [Features](#features)
+2. [Disclaimer](#disclaimer)
+3. [Installation](#installation)
+    1. [Manual](#manual-installation)
+    2. [Docker](#docker-installation)
+4. [Using the app](#using-the-app)
+
+## Features
+
+<img src="./src/assets/images/rune-home.png" alt="rune home page">
+To access the app features you need to find and select a repository you want to analyze using the search bar on the home page.
+<br>
+<br>
+
+1. **Codebase review**
+<p align="center">
+    <img src="./src/assets/images/rune-main.png" alt="rune main page">
+</p>
+
+- The codebase review feature in RUNE combines dynamic graph visualization, a code viewer on file node click, and brief repository data.
+
+2. **Prompt bar for LLM queries**
+<p align="center">
+    <img src="./src/assets/images/rune-promptbar.png" alt="rune prompt bar" width="400">
+</p>
+
+- The Prompt bar in RUNE serves as an interface to interact with LLMs, enabling you to pose natural language queries and receive detailed insights about your project structure. Due to the GitHub API limitations it can't store the content of all files and analyze it.
+
+3. **Dynamic code analysis**
+<p align="center">
+    <img src="./src/assets/images/rune-code.png" alt="rune code analysis" width="400">
+</p>
+
+- Dynamic code analysis in RUNE performs real-time code scrutiny, identifying issues, suggesting improvements, and fostering a proactive approach to code quality enhancement.
 
 ## Disclaimer
 
@@ -19,16 +55,9 @@ This document provides step-by-step instructions on how to run the RUNE web app.
 
 You can download and run RUNE via Docker to automatically install Memgraph, frontend and the backend components, or install it manually if you prefer a more customized setup.
 
-## Manual installation
+## Installation
 
-### Prerequisites
-
-Before proceeding, make sure you have the following installed on your machine:
-
-1.  [Node.js](https://nodejs.org/en/download/current) (version 14 or above)
-2.  [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) (Node Package Manager)
-
-### Cloning the repository
+1. Cloning the repository
 
 First, you need to clone the Git repository that contains the RUNE app. If you already have the codebase, you can skip this step.
 
@@ -42,7 +71,7 @@ Navigate into the RUNE root folder:
 cd rune 
 ```
 
-### Generating the GitHub API Token
+2. Generating the GitHub API Token
 
 To access the GitHub API and get more available requests per hour, you need to create a personal access token. You can create one by following the steps below:
 
@@ -53,7 +82,7 @@ To access the GitHub API and get more available requests per hour, you need to c
 
 **Note**: Ensure that you save the generated token in a safe place. It will not be shown again.
 
-### Generating the News API token
+3. Generating the News API token (optional for article recommendation)
 
 To access NewsAPI and retrieve theme-related articles for your repository, you'll need to generate a [NewsAPI](https://newsapi.org/) token. Follow these steps:
 
@@ -63,7 +92,7 @@ To access NewsAPI and retrieve theme-related articles for your repository, you'l
 
 **Note**: It's important to securely store the generated token. Treat it as a sensitive credential, as it provides access to the NewsAPI. Keep it confidential and avoid sharing it publicly.
 
-### Creating the .env file
+4. Creating the .env file
 
 In the root directory of your project, create a new file called `.env` (if it doesn't already exist). This file will store your environment variables, including the GitHub API token.
 
@@ -76,45 +105,36 @@ REACT_APP_NEWS_API_TOKEN=YOUR_GENERATED_NEWSAPI_TOKEN
 
 Replace `YOUR_GENERATED_GITHUB_TOKEN` and `YOUR_GENERATED_NEWSAPI_TOKEN` with the actual tokens you generated in previous steps.
 
-### Installing and running RUNE
+5. Installing and running RUNE
 
-1. Install all required dependencies: 
+    You have the option to install RUNE using Docker, which will automatically install, set up and run the Memgraph database, the backend, and frontend components, or you can manually run the project locally for a more customized setup or if you already have Memgraph up and running.
 
-    ```npm install```
+    ### Manual installation
 
+    You will need to have [Node.js](https://nodejs.org/en/download/current) (version 14 or above) and [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) (Node Package Manager) installed on your machine.
 
-2. Run the app:
+    1. Install all required dependencies: 
 
-    ```npm start``` 
-    
-    This command will compile the TypeScript code and launch the app in your default web browser. If it doesn't open automatically, you can visit `http://localhost:3000` in your browser to access the running app.
-
-3. Now that you have frontend up and running, you need to start the backend by following the installation steps for [BOR](https://github.com/memgraph/bor).
+        ```npm install```
 
 
-## Docker installation
+    2. Run the app:
 
-### Cloning the repository
+        ```npm start``` 
+        
+        This command will compile the TypeScript code and launch the app in your default web browser. If it doesn't open automatically, you can visit `http://localhost:3000` in your browser to access the running app.
 
-First, you need to clone the Git repository that contains the RUNE app. If you already have the codebase, you can skip this step.
+    3. Now that you have frontend up and running, you need to start the backend by following the installation steps for [BOR](https://github.com/memgraph/bor).
 
-```
-git clone https://github.com/memgraph/rune.git
-```
+    ### Docker installation
 
-Navigate into the RUNE root folder:
+    1. Starting the app
 
-```
-cd rune 
-```
+    To start RUNE make sure you have a running [Docker](https://www.docker.com/) instance and [Docker compose](https://docs.docker.com/compose/install/) installed.
 
-### Starting the app
-
-To start RUNE make sure you have a running [Docker](https://www.docker.com/) instance and [Docker compose](https://docs.docker.com/compose/install/) installed.
-
-```
-docker compose up
-```
+    ```
+    docker compose up
+    ```
 
 ### Using the app
 
