@@ -57,7 +57,7 @@ You can download and run RUNE via Docker to automatically install Memgraph, fron
 
 ## Installation
 
-1. Cloning the repository
+1. **Cloning the repository**
 
 First, you need to clone the Git repository that contains the RUNE app. If you already have the codebase, you can skip this step.
 
@@ -71,7 +71,7 @@ Navigate into the RUNE root folder:
 cd rune 
 ```
 
-2. Generating the GitHub API Token
+2. **Generating the GitHub API Token**
 
 To access the GitHub API and get more available requests per hour, you need to create a personal access token. You can create one by following the steps below:
 
@@ -82,7 +82,7 @@ To access the GitHub API and get more available requests per hour, you need to c
 
 **Note**: Ensure that you save the generated token in a safe place. It will not be shown again.
 
-3. Generating the News API token (optional for article recommendation)
+3. **Generating the News API token** (optional for article recommendation)
 
 To access NewsAPI and retrieve theme-related articles for your repository, you'll need to generate a [NewsAPI](https://newsapi.org/) token. Follow these steps:
 
@@ -92,7 +92,7 @@ To access NewsAPI and retrieve theme-related articles for your repository, you'l
 
 **Note**: It's important to securely store the generated token. Treat it as a sensitive credential, as it provides access to the NewsAPI. Keep it confidential and avoid sharing it publicly.
 
-4. Creating the .env file
+4. **Creating the .env file**
 
 In the root directory of your project, create a new file called `.env` (if it doesn't already exist). This file will store your environment variables, including the GitHub API token.
 
@@ -105,7 +105,7 @@ REACT_APP_NEWS_API_TOKEN=YOUR_GENERATED_NEWSAPI_TOKEN
 
 Replace `YOUR_GENERATED_GITHUB_TOKEN` and `YOUR_GENERATED_NEWSAPI_TOKEN` with the actual tokens you generated in previous steps.
 
-5. Installing and running RUNE
+5. **Installing and running RUNE**
 
     You have the option to install RUNE using Docker, which will automatically install, set up and run the Memgraph database, the backend, and frontend components, or you can manually run the project locally for a more customized setup or if you already have Memgraph up and running.
 
